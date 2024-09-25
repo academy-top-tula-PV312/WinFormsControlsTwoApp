@@ -35,6 +35,13 @@
             radioButton2 = new RadioButton();
             radioButton3 = new RadioButton();
             groupBox1 = new GroupBox();
+            listCities = new ListBox();
+            txtCity = new TextBox();
+            btnAdd = new Button();
+            btnDelete = new Button();
+            btnView = new Button();
+            lblCities = new Label();
+            cmbBoxCities = new ComboBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -125,17 +132,99 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
+            // listCities
+            // 
+            listCities.Font = new Font("Segoe UI", 14F);
+            listCities.FormattingEnabled = true;
+            listCities.ItemHeight = 25;
+            listCities.Items.AddRange(new object[] { "Москва", "Тула", "Орел", "Калуга", "Брянск" });
+            listCities.Location = new Point(255, 35);
+            listCities.Name = "listCities";
+            listCities.SelectionMode = SelectionMode.MultiExtended;
+            listCities.Size = new Size(192, 204);
+            listCities.TabIndex = 7;
+            listCities.SelectedIndexChanged += listCities_SelectedIndexChanged;
+            listCities.DoubleClick += listCities_DoubleClick;
+            // 
+            // txtCity
+            // 
+            txtCity.Font = new Font("Segoe UI", 14F);
+            txtCity.Location = new Point(494, 35);
+            txtCity.Name = "txtCity";
+            txtCity.Size = new Size(229, 32);
+            txtCity.TabIndex = 8;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Font = new Font("Segoe UI", 14F);
+            btnAdd.Location = new Point(494, 89);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(99, 39);
+            btnAdd.TabIndex = 9;
+            btnAdd.Text = "Add City";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Font = new Font("Segoe UI", 14F);
+            btnDelete.Location = new Point(599, 89);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(124, 39);
+            btnDelete.TabIndex = 9;
+            btnDelete.Text = "Delete City";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnView
+            // 
+            btnView.Font = new Font("Segoe UI", 14F);
+            btnView.Location = new Point(494, 198);
+            btnView.Name = "btnView";
+            btnView.Size = new Size(99, 41);
+            btnView.TabIndex = 10;
+            btnView.Text = "View";
+            btnView.UseVisualStyleBackColor = true;
+            btnView.Click += btnView_Click;
+            // 
+            // lblCities
+            // 
+            lblCities.AutoSize = true;
+            lblCities.Font = new Font("Segoe UI", 14F);
+            lblCities.Location = new Point(255, 337);
+            lblCities.Name = "lblCities";
+            lblCities.Size = new Size(0, 25);
+            lblCities.TabIndex = 11;
+            // 
+            // cmbBoxCities
+            // 
+            cmbBoxCities.Font = new Font("Segoe UI", 14F);
+            cmbBoxCities.FormattingEnabled = true;
+            cmbBoxCities.Location = new Point(255, 269);
+            cmbBoxCities.Name = "cmbBoxCities";
+            cmbBoxCities.Size = new Size(192, 33);
+            cmbBoxCities.TabIndex = 12;
+            cmbBoxCities.SelectedIndexChanged += cmbBoxCities_SelectedIndexChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(cmbBoxCities);
+            Controls.Add(lblCities);
+            Controls.Add(btnView);
+            Controls.Add(btnDelete);
+            Controls.Add(btnAdd);
+            Controls.Add(txtCity);
+            Controls.Add(listCities);
             Controls.Add(groupBox1);
             Controls.Add(checkBox3);
             Controls.Add(checkBox2);
             Controls.Add(checkBox1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -151,5 +240,12 @@
         private RadioButton radioButton2;
         private RadioButton radioButton3;
         private GroupBox groupBox1;
+        private ListBox listCities;
+        private TextBox txtCity;
+        private Button btnAdd;
+        private Button btnDelete;
+        private Button btnView;
+        private Label lblCities;
+        private ComboBox cmbBoxCities;
     }
 }
