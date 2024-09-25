@@ -42,7 +42,15 @@
             btnView = new Button();
             lblCities = new Label();
             cmbBoxCities = new ComboBox();
+            chkListCities = new CheckedListBox();
+            btnCheckListInfo = new Button();
+            btnUnCheck = new Button();
+            btnCheck = new Button();
+            btnIndet = new Button();
+            numericUpDown1 = new NumericUpDown();
+            domainUpDown1 = new DomainUpDown();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // checkBox1
@@ -179,7 +187,7 @@
             // btnView
             // 
             btnView.Font = new Font("Segoe UI", 14F);
-            btnView.Location = new Point(494, 198);
+            btnView.Location = new Point(494, 150);
             btnView.Name = "btnView";
             btnView.Size = new Size(99, 41);
             btnView.TabIndex = 10;
@@ -200,17 +208,101 @@
             // 
             cmbBoxCities.Font = new Font("Segoe UI", 14F);
             cmbBoxCities.FormattingEnabled = true;
-            cmbBoxCities.Location = new Point(255, 269);
+            cmbBoxCities.Location = new Point(255, 259);
             cmbBoxCities.Name = "cmbBoxCities";
             cmbBoxCities.Size = new Size(192, 33);
             cmbBoxCities.TabIndex = 12;
             cmbBoxCities.SelectedIndexChanged += cmbBoxCities_SelectedIndexChanged;
             // 
+            // chkListCities
+            // 
+            chkListCities.Font = new Font("Segoe UI", 14F);
+            chkListCities.FormattingEnabled = true;
+            chkListCities.Location = new Point(559, 211);
+            chkListCities.Name = "chkListCities";
+            chkListCities.Size = new Size(223, 166);
+            chkListCities.TabIndex = 13;
+            // 
+            // btnCheckListInfo
+            // 
+            btnCheckListInfo.Font = new Font("Segoe UI", 14F);
+            btnCheckListInfo.Location = new Point(559, 383);
+            btnCheckListInfo.Name = "btnCheckListInfo";
+            btnCheckListInfo.Size = new Size(223, 44);
+            btnCheckListInfo.TabIndex = 14;
+            btnCheckListInfo.Text = "Check List Info";
+            btnCheckListInfo.UseVisualStyleBackColor = true;
+            btnCheckListInfo.Click += btnCheckListInfo_Click;
+            // 
+            // btnUnCheck
+            // 
+            btnUnCheck.Location = new Point(811, 215);
+            btnUnCheck.Name = "btnUnCheck";
+            btnUnCheck.Size = new Size(122, 49);
+            btnUnCheck.TabIndex = 15;
+            btnUnCheck.Text = "UnCheck";
+            btnUnCheck.UseVisualStyleBackColor = true;
+            btnUnCheck.Click += btnUnCheck_Click;
+            // 
+            // btnCheck
+            // 
+            btnCheck.Location = new Point(811, 283);
+            btnCheck.Name = "btnCheck";
+            btnCheck.Size = new Size(122, 49);
+            btnCheck.TabIndex = 15;
+            btnCheck.Text = "Check";
+            btnCheck.UseVisualStyleBackColor = true;
+            btnCheck.Click += btnCheck_Click;
+            // 
+            // btnIndet
+            // 
+            btnIndet.Location = new Point(811, 347);
+            btnIndet.Name = "btnIndet";
+            btnIndet.Size = new Size(122, 49);
+            btnIndet.TabIndex = 15;
+            btnIndet.Text = "Indenterimate";
+            btnIndet.UseVisualStyleBackColor = true;
+            btnIndet.Click += btnIndet_Click;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Font = new Font("Segoe UI", 14F);
+            numericUpDown1.Hexadecimal = true;
+            numericUpDown1.Location = new Point(255, 302);
+            numericUpDown1.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(192, 32);
+            numericUpDown1.TabIndex = 16;
+            numericUpDown1.Value = new decimal(new int[] { 14, 0, 0, 0 });
+            // 
+            // domainUpDown1
+            // 
+            domainUpDown1.Font = new Font("Segoe UI", 14F);
+            domainUpDown1.Items.Add("Брянск");
+            domainUpDown1.Items.Add("Калуга");
+            domainUpDown1.Items.Add("Курск");
+            domainUpDown1.Items.Add("Москва");
+            domainUpDown1.Items.Add("Тула");
+            domainUpDown1.Location = new Point(255, 354);
+            domainUpDown1.Name = "domainUpDown1";
+            domainUpDown1.Size = new Size(192, 32);
+            domainUpDown1.Sorted = true;
+            domainUpDown1.TabIndex = 17;
+            domainUpDown1.Text = "domainUpDown1";
+            domainUpDown1.Wrap = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(944, 450);
+            Controls.Add(domainUpDown1);
+            Controls.Add(numericUpDown1);
+            Controls.Add(btnIndet);
+            Controls.Add(btnCheck);
+            Controls.Add(btnUnCheck);
+            Controls.Add(btnCheckListInfo);
+            Controls.Add(chkListCities);
             Controls.Add(cmbBoxCities);
             Controls.Add(lblCities);
             Controls.Add(btnView);
@@ -227,6 +319,7 @@
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -247,5 +340,12 @@
         private Button btnView;
         private Label lblCities;
         private ComboBox cmbBoxCities;
+        private CheckedListBox chkListCities;
+        private Button btnCheckListInfo;
+        private Button btnUnCheck;
+        private Button btnCheck;
+        private Button btnIndet;
+        private NumericUpDown numericUpDown1;
+        private DomainUpDown domainUpDown1;
     }
 }

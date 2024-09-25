@@ -39,6 +39,7 @@ namespace WinFormsControlsTwoApp
         {
             List<string> cities = new() { "Москва", "Калуга", "Тула", "Воронеж", "Брянск" };
             cmbBoxCities.Items.AddRange(cities.ToArray());
+            chkListCities.Items.AddRange(cities.ToArray());
 
 
             //listCities.Items.Add("Новгород");
@@ -90,6 +91,31 @@ namespace WinFormsControlsTwoApp
         private void cmbBoxCities_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblCities.Text = cmbBoxCities.SelectedItem.ToString();
+        }
+
+        private void btnCheckListInfo_Click(object sender, EventArgs e)
+        {
+            string message = $"Selected: {chkListCities.SelectedItem}\nChecked:\n";
+            foreach (var check in chkListCities.CheckedItems)
+                message += check + "\n";
+            MessageBox.Show(message);
+
+        }
+
+        private void btnUnCheck_Click(object sender, EventArgs e)
+        {
+            chkListCities.SetItemCheckState(chkListCities.SelectedIndex, CheckState.Unchecked);
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            chkListCities.SetItemCheckState(chkListCities.SelectedIndex, CheckState.Checked);
+        }
+
+        private void btnIndet_Click(object sender, EventArgs e)
+        {
+            chkListCities.SetItemChecked(chkListCities.SelectedIndex, true);
+            chkListCities.SetItemCheckState(chkListCities.SelectedIndex, CheckState.Indeterminate);
         }
     }
 }
